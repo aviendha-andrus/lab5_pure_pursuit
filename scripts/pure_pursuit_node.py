@@ -18,8 +18,8 @@ class PurePursuit(Node):
 
         # Topics & Subs, Pubs
         drive_topic = '/drive'
-        odom_topic = '/ego_racecar/odom' 
-        # odom_topic = '/odom'
+        # odom_topic = '/ego_racecar/odom' 
+        odom_topic = '/pf/pose/odom'
 
         # Subscribe to Odometry
         self.subscribe_to_odom = self.create_subscription(
