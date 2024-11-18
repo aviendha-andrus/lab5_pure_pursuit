@@ -11,7 +11,8 @@ def generate_launch_description():
 		output='screen',
 		parameters=[{'speed':LaunchConfiguration('speed', default='0.0'),
 			'max_turn':LaunchConfiguration('max_turn', default='0.0'),
-			'lookahead':LaunchConfiguration('lookahead', default='0.0')}
+			'lookahead':LaunchConfiguration('lookahead', default='0.0'),
+			'path':LaunchConfiguration('path', default='/sim_ws/src/pure_pursuit/logs/waypoints.csv')}
 		]
 	)
 
