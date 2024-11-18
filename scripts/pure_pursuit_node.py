@@ -37,7 +37,9 @@ class PurePursuit(Node):
         # Hardcoded waypoint file path
         # self.file = '/sim_ws/src/f1tenth_gym_ros/pure_pursuit/logs/waypoints.csv' 
         # self.file = '/sim_ws/src/pure_pursuit/logs/waypoints.csv' 
-        self.file = '/poppin_tires/lab5_pure_pursuit/logs/waypoints.csv'
+        # self.file = '/poppin_tires/lab5_pure_pursuit/logs/waypoints.csv'
+        self.declare_parameter('path', '/sim_ws/src/pure_pursuit/logs/waypoints.csv')
+        self.file = self.get_parameter('path').get_parameter_value().string_value
 
         csv_data = np.loadtxt(self.file, delimiter=',', skiprows=1)  # Adjust delimiter if needed
         self.waypoints = csv_data[:, [1, 2, 3, 4]]  # Extract x, y, theta (yaw), and speed (columns 1, 2, 3, 4)
