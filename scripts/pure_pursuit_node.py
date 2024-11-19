@@ -48,7 +48,7 @@ class PurePursuit(Node):
         # Reference speed for the waypoints (adjust as needed)
         # self.speed = self.waypoints[:, 4]  # Assuming speed is in column 4 (index 4)
         
-        self.speed = 0.7
+        self.speed = 0.9
         self.lookahead = 0.6
         self.max_turn_angle = 0.5
         self.file = '/home/f1/poppin_tires/src/lab5_pure_pursuit-main/logs/waypoints.csv'
