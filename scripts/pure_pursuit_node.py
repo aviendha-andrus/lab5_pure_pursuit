@@ -48,18 +48,19 @@ class PurePursuit(Node):
         # Reference speed for the waypoints (adjust as needed)
         # self.speed = self.waypoints[:, 4]  # Assuming speed is in column 4 (index 4)
         
-        # self.speed = 0.7
-        # self.lookahead = 1.0
-        # self.max_turn_angle = 0.5
+        self.speed = 0.7
+        self.lookahead = 0.6
+        self.max_turn_angle = 0.5
+        self.file = '/home/f1/poppin_tires/src/lab5_pure_pursuit-main/logs/waypoints.csv'
 
-        self.declare_parameter('speed', 0.0)
-        self.speed = self.get_parameter('speed').get_parameter_value().double_value
+        # self.declare_parameter('speed', 0.0)
+        # self.speed = self.get_parameter('speed').get_parameter_value().double_value
 
-        self.declare_parameter('lookahead', 0.0)
-        self.lookahead = self.get_parameter('lookahead').get_parameter_value().double_value
+        # self.declare_parameter('lookahead', 0.0)
+        # self.lookahead = self.get_parameter('lookahead').get_parameter_value().double_value
 
-        self.declare_parameter('max_turn', 0.0)
-        self.max_turn_angle = self.get_parameter('max_turn').get_parameter_value().double_value
+        # self.declare_parameter('max_turn', 0.0)
+        # self.max_turn_angle = self.get_parameter('max_turn').get_parameter_value().double_value
 
     def odom_callback(self, odom_msg):
         # Get current pose from Odometry message
